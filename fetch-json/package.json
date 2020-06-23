@@ -1,0 +1,16 @@
+{
+  "name": "fetch-json",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc ./src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^0.19.2",
+    "typescript": "^3.9.5"
+  }
+}
