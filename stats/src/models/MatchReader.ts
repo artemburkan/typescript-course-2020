@@ -1,13 +1,17 @@
 import { dateSctringToDate } from "../utils/utils"
-import { MatchResult } from "./MatchResult"
+import { MatchResult } from "./match/MatchResult"
+import { MatchData } from "./match/MatchData"
 import { DataReader } from "./DataReader"
-
-type MatchData = [Date, string, string, number, number, MatchResult, string]
+import { CsvFileReader } from "./CsvFileReader"
 
 export class MatchReader {
   matches: MatchData[] = []
 
   constructor(public dataReader: DataReader) {}
+
+  static fromCsv(filename: string): MatchReader {
+    return new MatchReader(new CsvFileReader(filename))
+  }
 
   load() {
     this.dataReader.read()
