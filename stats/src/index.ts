@@ -1,11 +1,12 @@
 import { MatchReader } from "./models/MatchReader"
 import { Summary } from "./models/Summary"
+import { match } from "assert"
 
 const filename = "footballStats.csv"
 
-const matchReader = MatchReader.fromCsv(filename)
-matchReader.load()
+const matchReader = MatchReader.fromCsv()
+matchReader.load(filename)
 
-const summary = Summary.winsAnaysisWithConsoleReport("Man United")
+const summary = Summary.winsAnaysisWithConsoleReport()
 
-summary.buildAndPrintReport(matchReader.matches)
+summary.buildAndPrintReport("Man United", matchReader.matches)
