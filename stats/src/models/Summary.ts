@@ -4,7 +4,7 @@ import { HtmlReport } from "./reports/HtmlReport"
 import { ConsoleReport } from "./reports/ConsoleReport"
 
 export interface Analyzer {
-  run(matches: MatchData[]): string
+  run(team: string, matches: MatchData[]): string
 }
 
 export interface OutputTarget {
@@ -12,18 +12,18 @@ export interface OutputTarget {
 }
 
 export class Summary {
-  static winsAnaysisWithHtmlReport(team: string): Summary {
-    return new Summary(new WinsAnalysis(team), new HtmlReport())
+  static winsAnaysisWithHtmlReport(): Summary {
+    return new Summary(new WinsAnalysis(), new HtmlReport())
   }
 
-  static winsAnaysisWithConsoleReport(team: string): Summary {
-    return new Summary(new WinsAnalysis(team), new ConsoleReport())
+  static winsAnaysisWithConsoleReport(): Summary {
+    return new Summary(new WinsAnalysis(), new ConsoleReport())
   }
 
   constructor(public analyzer: Analyzer, public outputTarget: OutputTarget) {}
 
-  buildAndPrintReport(matches: MatchData[]) {
-    const output = this.analyzer.run(matches)
+  buildAndPrintReport(team: string, matches: MatchData[]) {
+    const output = this.analyzer.run(team, matches)
     this.outputTarget.print(output)
   }
 }

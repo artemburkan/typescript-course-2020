@@ -1,4 +1,3 @@
 export interface DataReader {
-  read(): void
-  data: string[][]
+  read(filename: string): string[]
 }
