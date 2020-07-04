@@ -15,7 +15,7 @@ interface RemoteSync<T> {
 
 interface EventsStore {
   on(eventName: string, callback: Callback): void
-  trigger(eventName: string)
+  trigger(eventName: string): void
 }
 
 export class Model<T extends HasId> {
@@ -32,6 +32,7 @@ export class Model<T extends HasId> {
   get = this.properties.get
 
   set(update: T) {
+    console.log("update: ", update)
     this.properties.set(update)
     this.eventsStore.trigger("change")
   }

@@ -1,6 +1,6 @@
 import { Callback } from "./Callback"
 
-interface EventsCollection {
+export interface EventsCollection {
   [key: string]: Callback[]
 }
 

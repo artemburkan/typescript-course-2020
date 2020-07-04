@@ -6,7 +6,8 @@ export class Properties<T> {
   }
 
   set(update: T) {
-    this.data = Object.assign(this.data, update)
+    this.data = { ...this.data, ...update }
+    // Object.assign(this.data, update)
   }
 
   getAll(): T {
