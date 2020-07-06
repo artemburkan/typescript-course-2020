@@ -1,5 +1,5 @@
-import { View } from "../model/View"
-import { Callback } from "../model/Callback"
+import { View } from "../framework/view/View"
+import { Callback } from "../framework/model/Callback"
 import { User } from "../model/User"
 import { UserForm } from "./UserForm"
 import { UserShow } from "./UserShow"

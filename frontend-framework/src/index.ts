@@ -1,5 +1,5 @@
 import { User } from "./model/User"
-import { Collection } from "./model/Collection"
+import { Collection } from "./framework/model/Collection"
 import { UserList } from "./view/UserList"
 
 const rootUrl = "http://localhost:3000/users"

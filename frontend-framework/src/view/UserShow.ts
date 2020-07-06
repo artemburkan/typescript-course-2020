@@ -1,5 +1,5 @@
-import { View } from "./View"
-import { Callback } from "../model/Callback"
+import { View } from "../framework/view/View"
+import { Callback } from "../framework/model/Callback"
 import { User } from "../model/User"
 
 export class UserShow extends View<User> {

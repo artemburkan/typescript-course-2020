@@ -1,4 +1,4 @@
-import { CollectionView } from "./CollectionView"
+import { CollectionView } from "../framework/view/CollectionView"
 import { User } from "../model/User"
 import { UserShow } from "../view/UserShow"
 

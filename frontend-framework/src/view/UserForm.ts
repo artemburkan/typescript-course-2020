@@ -1,5 +1,5 @@
-import { User, UserProps } from "../model/User"
-import { View } from "./View"
+import { User } from "../model/User"
+import { View } from "../framework/view/View"
 
 export class UserForm extends View<User> {
   onRender() {}

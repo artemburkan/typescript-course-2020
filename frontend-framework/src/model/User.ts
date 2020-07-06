@@ -1,9 +1,8 @@
-import axios, { AxiosResponse } from "axios"
-import { EventsStore } from "./EventsStore"
-import { RemoteSync, HasId } from "./RemoteSync"
-import { Properties } from "./Properties"
-import { Model } from "./Model"
-import { Collection } from "./Collection"
+import { EventsStore } from "../framework/model/EventsStore"
+import { RemoteSync, HasId } from "../framework/model/RemoteSync"
+import { Properties } from "../framework/model/Properties"
+import { Model } from "../framework/model/Model"
+import { Collection } from "../framework/model/Collection"
 
 export interface UserProps extends HasId {
   name?: string
