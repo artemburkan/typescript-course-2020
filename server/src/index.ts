@@ -1,22 +1,27 @@
 import express, { Request, Response } from "express"
-import { router } from "./routes/loginRoutes"
 import bodyParser from "body-parser"
 import cookieSession from "cookie-session"
+import { AppRouter } from "./AppRouter"
+import "./controllers/LoginController"
+import "./controllers/RootController"
 
 class Server {
-  app: express.Express = express()
+  protected express: express.Express = express()
 
-  constructor() {
-    this.app.use(bodyParser.urlencoded({ extended: true }))
-    this.app.use(cookieSession({ keys: ["asdasd"] }))
-    this.app.use(router)
+  private constructor() {
+    this.express.use(bodyParser.urlencoded({ extended: true }))
+    this.express.use(cookieSession({ keys: ["asdasd"] }))
+    this.express.use(AppRouter.shared)
   }
 
-  start() {
-    this.app.listen(3000, () => {
+  static start(): Server {
+    const server = new Server()
+    server.express.listen(3000, () => {
       console.log("Listening on port 3000")
     })
+
+    return server
   }
 }
 
-const server = new Server().start()
+const server = Server.start()
